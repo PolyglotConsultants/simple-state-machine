@@ -61,7 +61,6 @@ yarn add state-machine-react
 
 #### StateKeys.constants.ts - A sample constants file for all state keys,
 ```bash
-
 import { StateKey } from 'simple-state-machine';
 
 export const CounterKey = new StateKey<number>('Counter');
@@ -70,7 +69,6 @@ export const CounterKey = new StateKey<number>('Counter');
 #### IncrementCounterCommand.ts 
 A sample Command class containing application logic, and updates state.
 ```bash
-
 import { Command } from 'simple-state-machine';
 import { CounterKey } from './stateKeys';
 
