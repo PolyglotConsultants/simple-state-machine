@@ -40,6 +40,7 @@
   "keywords": [
     "state-management",
     "command-pattern",
+    "typescript",
     "rxjs",
     "angular",
     "react",

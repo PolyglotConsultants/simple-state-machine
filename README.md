@@ -4,10 +4,9 @@
 [![Build Status](https://github.com/your-username/simple-state-machine/actions/workflows/build.yml/badge.svg)](https://github.com/your-username/simple-state-machine/actions)
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A lightweight and flexible state management library designed for modern JavaScript and TypeScript applications. 
+A lightweight and flexible state management library designed from scratch in Typescript, for modern JavaScript and TypeScript applications. 
 The `simple-state-machine` follows a command-based architecture, making it easy to manage and manipulate application state in a structured manner.
 
----
 
 ## Features
 
@@ -17,7 +16,6 @@ The `simple-state-machine` follows a command-based architecture, making it easy 
 - **Observable State**: Integrates with observables for state subscription and reactivity.
 - **Framework-Agnostic**: Works seamlessly with React, Angular, Node.js, or plain JavaScript.
 
----
 
 ## Installation
 
@@ -56,17 +54,17 @@ yarn add state-machine-react
 ```
 
 
----
 ## Usage
 
-#### StateKeys.constants.ts - A sample constants file for all state keys,
+### StateKeys.constants.ts
+A sample constants file for all state keys,
 ```bash
 import { StateKey } from 'simple-state-machine';
 
 export const CounterKey = new StateKey<number>('Counter');
 ```
 
-#### IncrementCounterCommand.ts 
+### IncrementCounterCommand.ts 
 A sample Command class containing application logic, and updates state.
 ```bash
 import { Command } from 'simple-state-machine';
@@ -82,7 +80,8 @@ export class IncrementCounterCommand extends Command<number> {
 }
 ```
 
-#### Usage in application - dispatching the command
+### Usage in application - Dispatch Command and Change State
+Dispatching a command
 ```bash
 import { StateMachine } from 'simple-state-machine';
 
@@ -94,7 +93,8 @@ stateMachine.dispatch(new IncrementCounterCommand(1));
 
 ```
 
-#### Usage in application - listening to state changes
+### Usage in application - Observe state change
+Listening to state changes
 ```bash
 import { StateMachine } from 'simple-state-machine';
 import { CounterKey } from './pathTo/StateKeys.constants';
@@ -106,7 +106,8 @@ stateMachine.onChange(CounterKey, value => {
 });
 ```
 
-#### Usage in application -  Quickly update state without creating a new Command Object.
+### Usage in application - Quick state change
+Quickly update state without creating a new Command Object.
 ```bash
 import { StateMachine, UpdateStateCommand} from 'simple-state-machine';
 import { CounterKey } from './pathTo/StateKeys.constants';
@@ -124,7 +125,7 @@ stateMachine.dispatch(new UpdateStateCommand({stateKey: CounterKey, value: 0}));
 # the same "service" class containing the logic to set the initial value
 ```
 
----
+
 ## API Documentation
 
 ### `StateMachine`
