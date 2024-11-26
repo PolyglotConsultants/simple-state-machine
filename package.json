@@ -47,5 +47,12 @@
     "react-native"
   ],
   "author": "Gopakumar Nair",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PolyglotConsultants/simple-state-machine.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
