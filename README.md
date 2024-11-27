@@ -10,8 +10,8 @@ The `simple-state-machine` decouples business logic from the UI code, as it allo
 This enables a clean, maintainable, and testable application architecture.
 
 This project is the core library in the **state-management** suite, and it includes wrappers for popular frameworks:
-- [state-machine-react](https://github.com/state-management/state-machine-react): React wrapper providing hooks like `fromState` and `useDispatcher`.
-- [ngx-state-machine](https://github.com/state-management/ngx-state-machine): Angular wrapper making the state machine injectable into angular components as a service.
+- [state-machine-react](https://www.npmjs.com/package/@state-management/state-machine-react): React wrapper providing hooks like `fromState` and `useDispatcher`.
+- [ngx-state-machine](https://www.npmjs.com/package/@state-management/ngx-state-machine): Angular wrapper making the state machine injectable into angular components as a service.
 
 By combining **simple-state-machine** with these wrappers, you can seamlessly integrate state management into your preferred framework.  
 
