@@ -10,7 +10,7 @@ The `simple-state-machine` follows a command-based architecture, making it easy 
 
 ## Features
 
-- **Command Pattern**: Encapsulate state-changing logic in isolated, testable command objects.
+- **Command Pattern**: Encapsulate state-changing logic in isolated, testable command objects.  This allows you to `separate business logic` from UI code.
 - **Singleton State Management**: Centralize application state with a singleton pattern for easy access and management.
 - **Type-Safe API**: Leverages TypeScript for strong typing and compile-time safety.
 - **Observable State**: Integrates with observables for state subscription and reactivity.
@@ -18,6 +18,8 @@ The `simple-state-machine` follows a command-based architecture, making it easy 
 
 
 ## Installation
+
+---
 
 Install the library via npm:
 
@@ -55,6 +57,8 @@ yarn add @state-management/state-machine-react
 
 
 ## Usage
+
+---
 
 ### StateKeys.constants.ts
 A sample constants file for all state keys,
@@ -127,11 +131,12 @@ stateMachine.dispatch(new UpdateStateCommand({stateKey: CounterKey, value: 0}));
 ```
 
 
-# API Documentation
+## API Documentation
+
+---
 
 This section provides detailed documentation for the core classes in the `@state-management/simple-state-machine` library: `Command` and `StateMachine`.
 
----
 
 ## `Command<P>` Class
 
@@ -142,7 +147,7 @@ The generics `<P>` defines the data type of the execution context, the parameter
 
 ### Constructor
 
-#### `constructor(executionContext: P)`
+### `constructor(executionContext: P)`
 Initializes a new `Command` instance with the provided execution context.
 
 | Parameter          | Type   | Description                                                                                                           |
@@ -150,10 +155,9 @@ Initializes a new `Command` instance with the provided execution context.
 | `executionContext` | `P`    | The parameter required for executing the command.  The type of parameter is generic, `<P>` is defined at class level. |
 
 ---
-
 ### Methods
 
-#### `protected putState<T>(key: StateKey<T>, value: T): void`
+### `protected putState<T>(key: StateKey<T>, value: T): void`
 Stores a value in the global state and makes it observable.
 
 | Parameter | Type            | Description                                         |
@@ -161,9 +165,10 @@ Stores a value in the global state and makes it observable.
 | `key`     | `StateKey<T>`   | The key associated with the state value.            |
 | `value`   | `T`             | The value to store in the state.                    |
 
+
 ---
 
-#### `getLatest<T>(key: StateKey<T>): T | undefined`
+### `getLatest<T>(key: StateKey<T>): T | undefined`
 Retrieves the latest value associated with the given key from the global state.
 
 | Parameter | Type            | Description                        |
@@ -183,7 +188,7 @@ console.log('Latest value:', value);
 
 ---
 
-#### `abstract execute(executionContext: P): void`
+### `abstract execute(executionContext: P): void`
 Defines the application logic for the command. This method must be implemented in subclasses.
 This method is called by the StateMachine when you dispatch a command.  
 It would perform the application logic and will set/change the state.
@@ -192,7 +197,7 @@ It would perform the application logic and will set/change the state.
 |--------------------|--------|----------------------------------------------------------------------------------------------------------------------|
 | `executionContext` | `P`    | The parameter required for executing the command. The type of parameter is generic, `<P>` is defined at class level. |
 
----
+
 
 ## `StateMachine` Class
 
@@ -200,7 +205,7 @@ The `StateMachine` class provides the core API for managing global state. It fol
 
 ### Static Methods
 
-#### `static getInstance(): StateMachine`
+### `static getInstance(): StateMachine`
 Retrieves the singleton instance of the `StateMachine`. You can use this to dispatch commands and to observe state changes.
 
 | Returns | Type         | Description                      |
@@ -211,7 +216,7 @@ Retrieves the singleton instance of the `StateMachine`. You can use this to disp
 
 ### Methods
 
-#### `dispatch<T>(command: Command<T>): void`
+### `dispatch<T>(command: Command<T>): void`
 Executes the `Command`, invoking its `execute` method. This is the only way to modify the global state.
 
 | Parameter | Type         | Description                                                        |
@@ -228,7 +233,7 @@ stateMachine.dispatch(new IncrementCounterCommand(1));
 ```
 ---
 
-#### `onChange<T>(key: StateKey<T>, onChange: (value: T) => void): Subscription`
+### `onChange<T>(key: StateKey<T>, onChange: (value: T) => void): Subscription`
 Convenience method to subscribe to changes for a specific state key. 
 It triggers the `onChange` callback whenever the value associated with the state key changes.  
 This method can be used even if the key does not yet exist in the state.
@@ -256,9 +261,10 @@ const subscription = stateMachine.onChange(CounterKey, (newValue) => {
 // to stop observing
 subscription.unsubscribe();
 ```
+
 ---
 
-#### `observe<T>(key: StateKey<T>): Observable<T>`
+### `observe<T>(key: StateKey<T>): Observable<T>`
 Returns an `Observable` to observe changes to the value associated with the given `key`. This method can be used even if the key does not yet exist in the state.
 
 | Parameter | Type           | Description                          |
@@ -279,8 +285,8 @@ subscription.unsubscribe();
 
 ---
 
-## UpdateStateCommand Class
-### `UpdateStateCommand<T> extends Command<UpdateStateParam<T>> `
+## `UpdateStateCommand` Class
+`UpdateStateCommand<T> extends Command<UpdateStateParam<T>> `
 - Convenience class to quickly update the state without creating a new command object.
 - It can be used for one-off initialization of state or a one-off state change.
 - 
@@ -298,4 +304,47 @@ In this example the initial value of the "CounterKey" in this example can be set
 It is recommended that, for both scenarios, use a different command object, which can call
 the same "service" class containing the logic to set the initial value.
 
+
+
+## Contributing
+
 ---
+We welcome contributions! Please open an issue or submit a pull request if you’d like to improve the library.
+
+Follow these steps for contributing code:
+
+### How to Contribute
+1. **Fork the Repository**:
+- Visit the [simple-state-machine GitHub repository](https://github.com/state-management/simple-state-machine).
+- Click the "Fork" button to create a copy of the repository under your GitHub account.
+
+2. **Clone the Fork**:
+```bash
+git clone https://github.com/state-management/simple-state-machine.git
+cd simple-state-machine
+```
+
+3. **Create a Feature Branch**:
+```bash
+git checkout -b feature/add-simple-state-machine-feature
+```   
+
+4. **Make Your Changes** :
+- Add or update code, write tests, and ensure the changes are well-documented.
+- Run Tests Locally, Ensure all existing and new tests pass e:
+- ```bash
+   npm install
+   npm test
+   ```   
+
+5. **Commit and Push Your Changes**:
+- Write a clear and concise commit message:
+- ```bash
+   git add .
+   git commit -m "Add new feature to simple-state-machine"
+   git push origin feature/add-simple-state-machine-feature
+    ```
+   
+6. **Create a Pull Request**:
+- Go to your fork on GitHub and click the “New Pull Request” button.
+- Provide a description of your changes and any additional context.
