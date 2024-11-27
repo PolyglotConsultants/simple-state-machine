@@ -1,7 +1,7 @@
 # Simple State Machine
 
 [![npm version](https://badge.fury.io/js/@state-management%2Fsimple-state-machine.svg)](https://www.npmjs.com/package/@state-management/simple-state-machine)
-[![Build Status](https://github.com/state-management/simple-state-machine/simple-state-machine/actions/workflows/build.yml/badge.svg)](https://github.com/state-management/simple-state-machine/actions)
+[![Build Status](https://github.com/state-management/simple-state-machine/actions/workflows/build.yml/badge.svg)](https://github.com/state-management/simple-state-machine/actions)
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A lightweight and flexible state management library designed from scratch in Typescript, for modern JavaScript and TypeScript applications. 
