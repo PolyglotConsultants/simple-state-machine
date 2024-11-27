@@ -19,8 +19,6 @@ The `simple-state-machine` follows a command-based architecture, making it easy 
 
 ## Installation
 
----
-
 Install the library via npm:
 
 ```bash
@@ -57,8 +55,6 @@ yarn add @state-management/state-machine-react
 
 
 ## Usage
-
----
 
 ### StateKeys.constants.ts
 A sample constants file for all state keys,
@@ -133,8 +129,6 @@ stateMachine.dispatch(new UpdateStateCommand({stateKey: CounterKey, value: 0}));
 
 ## API Documentation
 
----
-
 This section provides detailed documentation for the core classes in the `@state-management/simple-state-machine` library: `Command` and `StateMachine`.
 
 
@@ -197,7 +191,7 @@ It would perform the application logic and will set/change the state.
 |--------------------|--------|----------------------------------------------------------------------------------------------------------------------|
 | `executionContext` | `P`    | The parameter required for executing the command. The type of parameter is generic, `<P>` is defined at class level. |
 
-
+---
 
 ## `StateMachine` Class
 
@@ -308,7 +302,6 @@ the same "service" class containing the logic to set the initial value.
 
 ## Contributing
 
----
 We welcome contributions! Please open an issue or submit a pull request if you’d like to improve the library.
 
 
