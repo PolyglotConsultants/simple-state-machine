@@ -13,11 +13,15 @@ This project is the core library in the **state-management** suite, and it inclu
 - [state-machine-react](https://github.com/state-management/state-machine-react): React wrapper providing hooks like `fromState` and `useDispatcher`.
 - [ngx-state-machine](https://github.com/state-management/ngx-state-machine): Angular wrapper making the state machine injectable into angular components as a service.
 
-By combining **simple-state-machine** with these wrappers, you can seamlessly integrate state management into your preferred framework.
+By combining **simple-state-machine** with these wrappers, you can seamlessly integrate state management into your preferred framework.  
+
+### Implementations Examples
+- [Sample React project](https://github.com/state-management/react-example) that you can clone. It is a fully working example with unit tests, showcasing the implementation of `simple-state-machine` via the `state-machine-react` wrapper.
 
 ---
 
 ## Features
+###### *State management code, that is lot less scary, easy to read, easy to trace, and very easy to change and unit test.*
 
 ### **Traceability**: 
 This **single most important feature** that we wanted to design correctly is traceability of code.
@@ -28,7 +32,7 @@ This is invaluable while identifying issues in code.  This also reduces the depe
   
 ***Most importantly*** the state management code looks a lot less scary, it is easy to read, and it is very easy to change and unit test.  
 
-### The Important Technical Features:
+### Important Technical Features:
 - **State Management**: Centralize application state management using the Commands and Observables.
 - **Command Pattern**: Encapsulate state-changing logic in isolated, testable command objects.  This allows you to `separate business logic` from UI code.
 - **Type-Safe API**: Leverages TypeScript for strong typing and compile-time safety.
