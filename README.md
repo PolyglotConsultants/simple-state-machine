@@ -18,7 +18,6 @@ By combining **simple-state-machine** with these wrappers, you can seamlessly in
 ### Implementations Examples
 - [Sample React project](https://github.com/state-management/react-example) that you can clone. It is a fully working example with unit tests, showcasing the implementation of `simple-state-machine` via the `state-machine-react` wrapper.
 
----
 
 ## Features
 ###### *State management code, that is lot less scary, easy to read, easy to trace, and very easy to change and unit test.*
