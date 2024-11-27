@@ -1,7 +1,7 @@
 # Simple State Machine
 
-[![npm version](https://badge.fury.io/js/simple-state-machine.svg)](https://www.npmjs.com/package/simple-state-machine)
-[![Build Status](https://github.com/your-username/simple-state-machine/actions/workflows/build.yml/badge.svg)](https://github.com/your-username/simple-state-machine/actions)
+[![npm version](https://badge.fury.io/js/@state-management%2Fsimple-state-machine.svg)](https://www.npmjs.com/package/@state-management/simple-state-machine)
+[![Build Status](https://github.com/state-management/simple-state-machine/simple-state-machine/actions/workflows/build.yml/badge.svg)](https://github.com/state-management/simple-state-machine/actions)
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A lightweight and flexible state management library designed from scratch in Typescript, for modern JavaScript and TypeScript applications. 
@@ -22,11 +22,11 @@ The `simple-state-machine` follows a command-based architecture, making it easy 
 Install the library via npm:
 
 ```bash
-npm install simple-state-machine
+npm install @state-management/simple-state-machine
 ```
 OR
 ```bash
-yarn add simple-state-machine
+yarn add @state-management/simple-state-machine
 ```
 
 ### For Angular Applications
@@ -34,11 +34,11 @@ yarn add simple-state-machine
 For Angular applications use the Angular wrapper which provides it as an injectable module:
 
 ```bash
-npm install ngx-state-machine
+npm install @state-management/ngx-state-machine
 ```
 OR
 ```bash
-yarn add ngx-state-machine
+yarn add @state-management/ngx-state-machine
 ```
 
 ### For ReactJs and React Native Applications
@@ -46,11 +46,11 @@ yarn add ngx-state-machine
 For react and react native applications use the react wrapper which provides it react hooks:
 
 ```bash
-npm install state-machine-react
+npm install @state-management/state-machine-react
 ```
 OR
 ```bash
-yarn add state-machine-react
+yarn add @state-management/state-machine-react
 ```
 
 
@@ -59,7 +59,7 @@ yarn add state-machine-react
 ### StateKeys.constants.ts
 A sample constants file for all state keys,
 ```bash
-import { StateKey } from 'simple-state-machine';
+import { StateKey } from '@state-management/simple-state-machine';
 
 # NOTE: the generics in the StateKey defines the data type of the value stored against this key.
 export const CounterKey = new StateKey<number>('Counter');
@@ -68,8 +68,8 @@ export const CounterKey = new StateKey<number>('Counter');
 ### IncrementCounterCommand.ts 
 A sample Command class, contains application logic, and it updates the state with output.
 ```bash
-import { Command } from 'simple-state-machine';
-import { CounterKey } from './stateKeys';
+import { Command } from '@state-management/simple-state-machine';
+import { CounterKey } from './StateKeys.constants';
 
 # NOTE: the generics "<number>" here defines the data type of the execution context, that is the parameter passed to the "execute" method.
 export class IncrementCounterCommand extends Command<number> {
@@ -85,7 +85,7 @@ export class IncrementCounterCommand extends Command<number> {
 
 ### Usage in application - Dispatch Command and Change State
 ```bash
-import { StateMachine } from 'simple-state-machine';
+import { StateMachine } from '@state-management/simple-state-machine';
 
 const stateMachine = StateMachine.getInstance();
 
@@ -97,7 +97,7 @@ stateMachine.dispatch(new IncrementCounterCommand(1));
 
 ### Usage in application - Observe state change
 ```bash
-import { StateMachine } from 'simple-state-machine';
+import { StateMachine } from '@state-management/simple-state-machine';
 import { CounterKey } from './pathTo/StateKeys.constants';
 
 const stateMachine = StateMachine.getInstance();
@@ -110,7 +110,7 @@ stateMachine.onChange(CounterKey, value => {
 ### Usage in application - Quick state change
 Quickly update state without creating a new Command Object.
 ```bash
-import { StateMachine, UpdateStateCommand} from 'simple-state-machine';
+import { StateMachine, UpdateStateCommand} from '@state-management/simple-state-machine';
 import { CounterKey } from './pathTo/StateKeys.constants';
 
 const stateMachine = StateMachine.getInstance();
@@ -129,7 +129,7 @@ stateMachine.dispatch(new UpdateStateCommand({stateKey: CounterKey, value: 0}));
 
 # API Documentation
 
-This section provides detailed documentation for the core classes in the `simple-state-machine` library: `Command` and `StateMachine`.
+This section provides detailed documentation for the core classes in the `@state-management/simple-state-machine` library: `Command` and `StateMachine`.
 
 ---
 
@@ -220,7 +220,7 @@ Executes the `Command`, invoking its `execute` method. This is the only way to m
 
 **Example**:
 ```typescript
-import { StateMachine } from 'simple-state-machine';
+import { StateMachine } from '@state-management/simple-state-machinee';
 import { IncrementCounterCommand } from './commands/incrementCounterCommand';
 
 const stateMachine = StateMachine.getInstance();
@@ -244,7 +244,7 @@ This method can be used even if the key does not yet exist in the state.
 
 **Example**:
 ```typescript
-import { StateMachine, StateKey } from 'simple-state-machine';
+import { StateMachine, StateKey } from '@state-management/simple-state-machine';
 
 const CounterKey = new StateKey<number>('counter');
 const stateMachine = StateMachine.getInstance();
