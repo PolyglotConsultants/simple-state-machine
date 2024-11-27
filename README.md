@@ -304,11 +304,10 @@ the same "service" class containing the logic to set the initial value.
 
 We welcome contributions! Please open an issue or submit a pull request if you’d like to improve the library.
 
-
 ### How to Contribute
 #### 1. Fork the Repository:
-- Visit the [simple-state-machine GitHub repository](https://github.com/state-management/simple-state-machine).
-- Click the "Fork" button to create a copy of the repository under your GitHub account.
+Visit the [simple-state-machine GitHub repository](https://github.com/state-management/simple-state-machine).
+Click the "Fork" button to create a copy of the repository under your GitHub account.
 
 #### 2. Clone the Fork:
 ```bash
