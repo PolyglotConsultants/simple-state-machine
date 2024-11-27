@@ -1,6 +1,6 @@
 {
   "name": "@state-management/simple-state-machine",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple state management library using StateKey and Command Pattern for Angular, React, and React Native.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

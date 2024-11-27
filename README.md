@@ -5,16 +5,36 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A lightweight and flexible state management library designed from scratch in Typescript, for modern JavaScript and TypeScript applications. 
-The `simple-state-machine` follows a command-based architecture, making it easy to manage and manipulate application state in a structured manner.
+It is built around `reactive` programming (RxJs) and Command pattern.
+The `simple-state-machine` decouples business logic from the UI code, as it allows state manipulation only as part of execution of logic via `Commands`.
+This enables a clean, maintainable, and testable application architecture.
 
+This project is the core library in the **state-management** suite, and it includes wrappers for popular frameworks:
+- [state-machine-react](https://github.com/state-management/state-machine-react): React wrapper providing hooks like `fromState` and `useDispatcher`.
+- [ngx-state-machine](https://github.com/state-management/ngx-state-machine): Angular wrapper making the state machine injectable into angular components as a service.
+
+By combining **simple-state-machine** with these wrappers, you can seamlessly integrate state management into your preferred framework.
+
+---
 
 ## Features
 
+### **Traceability**: 
+This **single most important feature** that we wanted to design correctly is traceability of code.
+When trying to identify an issue, we should be able to go through the code, and identify the block causing the issue, without having to open ten different files.
+We should be able to use the  IDE's "find references" or even the simple Find(Ctrl + F) feature to quickly identify what `StateKeys` are changed by which `Commands`.
+  
+This is invaluable while identifying issues in code.  This also reduces the dependency on debugging tools and time spent in debugging.
+  
+***Most importantly*** the state management code looks a lot less scary, it is easy to read, and it is very easy to change and unit test.  
+
+### Rest of the Features:
+- **State Management**: Centralize application state management using the Commands and Observables.
 - **Command Pattern**: Encapsulate state-changing logic in isolated, testable command objects.  This allows you to `separate business logic` from UI code.
-- **Singleton State Management**: Centralize application state with a singleton pattern for easy access and management.
 - **Type-Safe API**: Leverages TypeScript for strong typing and compile-time safety.
-- **Observable State**: Integrates with observables for state subscription and reactivity.
-- **Framework-Agnostic**: Works seamlessly with React, Angular, Node.js, or plain JavaScript.
+- **Testability**: Designed for easy testing of state-related logic.
+- **Observable State**: Uses `reactive` (RxJS) for state observation and subscriptions.
+- **Framework-Agnostic**: Core library in Typescript, that can be extended to React, Angular, or other frameworks.
 
 
 ## Installation
