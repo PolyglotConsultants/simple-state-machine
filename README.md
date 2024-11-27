@@ -28,7 +28,7 @@ This is invaluable while identifying issues in code.  This also reduces the depe
   
 ***Most importantly*** the state management code looks a lot less scary, it is easy to read, and it is very easy to change and unit test.  
 
-### Rest of the Features:
+### The Important Technical Features:
 - **State Management**: Centralize application state management using the Commands and Observables.
 - **Command Pattern**: Encapsulate state-changing logic in isolated, testable command objects.  This allows you to `separate business logic` from UI code.
 - **Type-Safe API**: Leverages TypeScript for strong typing and compile-time safety.
