@@ -16,8 +16,9 @@ This project is the core library in the **state-management** suite, and it inclu
 By combining **simple-state-machine** with these wrappers, you can seamlessly integrate state management into your preferred framework.  
 
 ### Implementation Examples
-- [Sample React project](https://github.com/state-management/react-example) that you can clone. It is a fully working example with unit tests, showcasing the implementation of `simple-state-machine` via the `state-machine-react` wrapper.
-- [Sample Angular project](https://github.com/state-management/angular-example) that you can clone. It is a fully working example with unit tests, showcasing the use of `ngx-state-machine`.
+- [Sample React Web App](https://github.com/state-management/react-example) that you can clone. It is a React web app example with unit tests, showcasing the implementation of `simple-state-machine` via the `state-machine-react` wrapper.
+- [Sample React Native Mobile App](https://github.com/state-management/ReactNativeExample) that you can clone. It is a React Native mobile app example with unit tests, showcasing the implementation of `simple-state-machine` using the `state-machine-react` wrapper.
+- [Sample Angular Web App](https://github.com/state-management/angular-example) that you can clone. It is an Angular web app example with unit tests, showcasing the implementation of `simple-state-machine` using the `ngx-state-machine` wrapper.
 
 ## Features
 ###### *State management code, that is lot less scary, easy to read, easy to trace, and very easy to change and unit test.*
