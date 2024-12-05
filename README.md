@@ -10,8 +10,8 @@ The `simple-state-machine` decouples business logic from the UI code, as it allo
 This enables a clean, maintainable, and testable application architecture.
 
 This project is the core library in the **state-management** suite, and it includes wrappers for popular frameworks:
-- [state-machine-react](https://www.npmjs.com/package/@state-management/state-machine-react): React wrapper providing hooks like `fromState` and `useDispatcher`.  This wrapper has been tested with React versions **17.x** and **18.x**.
-- [ngx-state-machine](https://www.npmjs.com/package/@state-management/ngx-state-machine): Angular wrapper making the state machine injectable into angular components as a service.  This wrapper will work with Angular **12.x** and above.  It has been tested with Angular **18.x**.
+- [state-machine-react](https://www.npmjs.com/package/@state-management/state-machine-react): React wrapper providing hooks like `fromState` and `useDispatcher`.  This package has been tested with React versions **17.x** and **18.x**.  It is expected to work with newer React versions as well, but compatibility with versions beyond **18.x** has not been explicitly verified.
+- [ngx-state-machine](https://www.npmjs.com/package/@state-management/ngx-state-machine): Angular wrapper making the state machine injectable into angular components as a service.  This package will work with Angular **12.x** and above.  It has been tested with Angular **18.x**.
 
 By combining **simple-state-machine** with these wrappers, you can seamlessly integrate state management into your preferred framework.  
 
@@ -324,42 +324,15 @@ the same "service" class containing the logic to set the initial value.
 
 
 
-## Contributing
+## Contribute to Simple State Machine
 
 We welcome contributions! Please open an issue or submit a pull request if you’d like to improve the library.
 
-### How to Contribute
-#### 1. Fork the Repository:
-Visit the [simple-state-machine GitHub repository](https://github.com/state-management/simple-state-machine).
-Click the "Fork" button to create a copy of the repository under your GitHub account.
+### Report issues or request features
+Found a bug or have an idea for a new feature? Let us know by [opening an issue](https://github.com/state-management/simple-state-machine/issues).
 
-#### 2. Clone the Fork:
-```bash
-git clone https://github.com/state-management/simple-state-machine.git
-cd simple-state-machine
-```
+### Discuss features and approaches
+Start a discussion in the [Discussions](https://github.com/state-management/simple-state-machine/discussions) tab.
 
-#### 3. Create a Feature Branch:
-```bash
-git checkout -b feature/add-simple-state-machine-feature
-```   
-
-#### 4. Make Your Changes:
-Add or update code, write tests, and ensure the changes are well-documented.
-Run tests locally, ensure all existing and new tests pass
-```bash
-npm install
-npm test
-```   
-
-#### 5. Commit and Push Your Changes:
-Write a clear and concise commit message:
-```bash
-git add .
-git commit -m "Add new feature to simple-state-machine"
-git push origin feature/add-simple-state-machine-feature
-```
-
-#### 6. Create a Pull Request:
-Go to your fork on GitHub and click the “New Pull Request” button.
-Provide a description of your changes and any additional context.
+### Contribute code via pull requests. 
+See our [contributing guidelines](./CONTRIBUTING.md).
